@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regions - without Shadow DOM</title>    
+    <style>
+        .content p {
+            -webkit-flow-into: poemflow;
+            white-space: pre-line;
+        }
+
+        .content p::first-letter {
+            font-size: 2em;
+            line-height: 1px;
+            vertical-align: -0.05em;
+        }
+
+        .layout article {
+            overflow: hidden;
+            max-width: 60em;
+            margin: 0 auto;            
+        }
+        .layout article img {
+            float: left;
+            height: 15em;
+        }
+        .layout article div {
+            -webkit-flow-from: poemflow;
+            height: 9em;
+        }    
+
+        .layout article:nth-child(odd) img {
+            float: right;
+        }
+
+        .layout article:nth-child(odd) div p {
+            text-align: right;
+        }
+
+        .layout article:last-child div {
+            min-height: 50em;
+        }
+    </style>
+</head>
+<body>
+	<section class="content">
+        <p>Once upon a midnight dreary, while I pondered weak and weary,
+Over many a quaint and curious volume of forgotten lore,
+While I nodded, nearly napping, suddenly there came a tapping,
+As of some one gently rapping, rapping at my chamber door.
+`'Tis some visitor,' I muttered, `tapping at my chamber door -
+Only this, and nothing more.'
+        </p>
+        <p>
+            Ah, distinctly I remember it was in the bleak December,
+And each separate dying ember wrought its ghost upon the floor.
+Eagerly I wished the morrow; - vainly I had sought to borrow
+From my books surcease of sorrow - sorrow for the lost Lenore -
+For the rare and radiant maiden whom the angels named Lenore -
+Nameless here for evermore.
+        </p>
+        <p>
+            And the silken sad uncertain rustling of each purple curtain
+Thrilled me - filled me with fantastic terrors never felt before;
+So that now, to still the beating of my heart, I stood repeating
+`'Tis some visitor entreating entrance at my chamber door -
+Some late visitor entreating entrance at my chamber door; -
+This it is, and nothing more,'
+        </p>
+        <p>
+            Presently my soul grew stronger; hesitating then no longer,
+`Sir,' said I, `or Madam, truly your forgiveness I implore;
+But the fact is I was napping, and so gently you came rapping,
+And so faintly you came tapping, tapping at my chamber door,
+That I scarce was sure I heard you' - here I opened wide the door; -
+Darkness there, and nothing more.
+        </p>        
+    </section>
+    <section class="layout">
+        <article>
+            <img src="img-1.png">
+            <div></div>
+        </article>
+        <article>
+            <img src="img-2.png">
+            <div></div>
+        </article>
+        <article>
+            <img src="img-3.png">
+            <div></div>
+        </article>
+        <article>
+            <img src="img-4.png">
+            <div></div>
+        </article>
+    </section>
+</body>
+</html>

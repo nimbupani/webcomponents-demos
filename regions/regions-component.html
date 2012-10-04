@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Regions with Web Components</title>
+</head>
+<body>
+    <element name="regions" extends="section">
+        <template>            
+            <section class="content">
+                <content></content>
+            </section>
+            <section class="layout">
+                <article>
+                    <img src="img-1.png">
+                    <div>            
+                    </div>
+                </article>
+                <article>
+                    <img src="img-2.png">
+                    <div>            
+                    </div>
+                </article>
+                <article>
+                    <img src="img-3.png">
+                    <div>            
+                    </div>
+                </article>
+                <article>
+                    <img src="img-4.png">
+                    <div>            
+                    </div>
+                </article>  
+            </section>            
+            <script>
+            this.lifecycle({
+            created: function(root) { 
+                        root.applyAuthorStyles = true;  
+                     }
+            });
+            
+            </script>          
+        </template>
+    </element>    
+</body>
+</html>
+    

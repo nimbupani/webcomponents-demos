@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Button Component</title>
+</head>
+<body>
+<element name="super-button" extends="button">	
+    <template>   
+    ٩(͡๏̯͡๏)۶ <content></content>                        
+    </template>
+
+     <script type="text/javascript">    
+     	this.lifecycle({
+     		created: function(root) { 
+     			root.host.currentCount = 0;
+
+     			root.host.addEventListener('click', function() { 
+     				this.currentCount++;	     			     					     		
+	     			console.log('I was clicked %s', 
+	     				this.currentCount == 1? 'once': this.currentCount + ' times');		     			     				
+     			});     		
+     		}
+     	});        
+	</script> 
+</element>
+</body>
+</html>
