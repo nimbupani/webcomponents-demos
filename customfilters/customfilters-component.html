@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Filters Component</title>
+</head>
+<body>
+<element name="banner" extends="section">
+    <template>
+	<style>
+	    .banner {
+		-webkit-transform: translate3d(0, 0, 0);
+		-webkit-filter: custom(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/vertex/crumple.vs) mix(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/fragment/crumple.fs) multiply source-atop), 50 50 border-box, transform perspective(0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, strength 0.51, lightIntensity 1.11);
+		-webkit-animation: filteranimate 4s infinite;
+		color: white;
+		background: hsl(240, 100%, 20%);
+		background: -webkit-var(bg);
+		height: 300px;
+		height: -webkit-var(height);
+		text-align: center;
+		padding-top: 10px;
+		font: 16px/1.5 sans-serif;
+	    }
+
+
+	    @-webkit-keyframes filteranimate {
+		50% {
+		    background: red;
+		}
+	    }
+
+	    .left-container,
+	    .right-container {
+		width: 100%;
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 0;
+		text-align: left;
+		vertical-align: middle;
+	    }
+
+	    .left-container {
+		width: 300px;
+	    }
+
+	    .right-container {
+		width: 400px;
+	    }
+
+	    .left-container img {
+		max-width: 100%;
+	    }
+
+	</style>
+	<div class="banner">
+	    <div class="left-container">
+		<content select=".left-content"></content>
+	    </div>
+	    <div class="right-container">
+		<content select=".right-content"></content>
+	    </div>
+	</div>
+    </template>
+</element>
+<element name="banner-accordion" extends="section">
+    <template>
+	<style>
+	    .accordion {
+		height: 100px;
+		height: -webkit-var(height);
+		position: relative;
+	    }
+	    .accordion-element label {
+		background: black;
+		line-height: 0.5;
+		position: absolute;
+		left: 50%;
+		width: 0.5em;
+		height: 0.5em;
+		border-radius: 0.5em;
+		text-align: center;
+		font-size: 1em;
+		bottom: 15px;
+		z-index: 2;
+		box-shadow: 0 0 5px black;
+	    }
+
+	    .accordion-element label[for="banner-1"] {
+		margin-left: -1em;
+	    }
+
+	    .accordion-element [type=radio] {
+	      display: none;
+	    }
+	    .accordion-content {
+	      position: absolute;
+	      top: 0; left: 0; right: 0; bottom: 0;
+	      background: indianred;
+	      opacity: 0;
+	      vertical-align: middle;
+	      text-align: center;
+	      -webkit-transition: opacity .6s linear;
+	    }
+	    [type=radio]:checked ~ label {
+	      background: aliceblue;
+	      color: white;
+	      z-index: 2;
+	    }
+	    [type=radio]:checked ~ label ~ .accordion-content {
+	      z-index: 1;
+	      opacity: 1;
+	    }​
+
+	</style>
+	<div class="accordion">
+	    <div class="accordion-element">
+		<input type="radio" checked id="banner-1" name="banner">
+		<label for="banner-1">•</label>
+		<div class="accordion-content">
+		    <content select=".left-content"></content>
+		</div>
+	    </div>
+	    <div class="accordion-element">
+		<input type="radio" id="banner-2" name="banner">
+		<label for="banner-2">•</label>
+		<div class="accordion-content">
+		    <content select=".right-content"></content>
+		</div>
+	    </div>
+	</div>
+    </template>
+</element>
+</body>
+</html>

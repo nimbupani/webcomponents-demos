@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Filters</title>
+    <link rel="components" href="customfilters-component.html">
+    <script src="../components-polyfill.js"></script>
+    <style>
+	body {
+		height: 100%;
+	}
+
+	section {
+	    margin: -webkit-calc(-webkit-var(height)/2) 0 0 0;
+	}
+
+	img { max-width: 100%; border-radius: 100em; display: block; }
+
+	a {
+		color: aliceblue;
+		text-decoration: none;
+	}
+
+	.banner {
+	    -webkit-var-height: 400px;
+	}
+
+	</style>
+</head>
+<body>
+    <section is="banner">
+	<div class="left-content">
+	    <img src="glazkov.png">
+	</div>
+
+	<div class="right-content">
+	    <h2>I trust this guy</h2>
+	    <h3>Do You?</h3>
+	    <p>He is driving the components specifications. This photograph is all you need to trust him. <a href="http://twitter.com/dglazkov">@dglazkov</a> for President!</p>
+	</div>
+    </section>
+</body>
+</html>
