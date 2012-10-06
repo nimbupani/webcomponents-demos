@@ -14,15 +14,14 @@
     ٩(͡๏̯͡๏)۶ <span><content></content></span>
     </template>
 
-     <script type="text/javascript">    
+     <script type="text/javascript">            
      	this.lifecycle({
      		created: function(root) { 
-     			root.host.currentCount = 0;
-
-     			root.host.addEventListener('click', function() { 
+     			this.currentCount = 0;                
+     			this.addEventListener('click', function() { 
      				this.currentCount++;	     			     					     		
 	     			console.log('I was clicked %s', 
-	     				this.currentCount == 1? 'once': this.currentCount + ' times');		     			     				
+	     				this.currentCount == 1? 'once': this.currentCount == 2? 'twice' : this.currentCount == 3? 'thrice' : this.currentCount + ' times');		     			     				
      			});     		
      		}
      	});        

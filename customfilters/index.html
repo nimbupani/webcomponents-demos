@@ -10,10 +10,17 @@
 	}
 
 	section {
-	    margin: -webkit-calc(-webkit-var(height)/2) 0 0 0;
+		-webkit-var-height: 200px;
+	    margin: -webkit-calc(-webkit-var(height)) 0 0 0;
 	}
 
-	img { max-width: 100%; border-radius: 100em; display: block; }
+	img { 
+		max-width: 100%; 
+		border-radius: 100em; 
+		display: block; 
+		box-shadow: 0 0 2em #000;
+		height: 200px;
+	}
 
 	a {
 		color: aliceblue;
@@ -22,6 +29,19 @@
 
 	.banner {
 	    -webkit-var-height: 400px;
+	}
+
+	.right-content h3,
+	.right-content h2 {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	.right-content h2 {
+		font-size: 2em;
+		font-family: georgia, serif;
+		font-style: italic;
+		color: khaki;
 	}
 
 	</style>
@@ -33,9 +53,8 @@
 	</div>
 
 	<div class="right-content">
-	    <h2>I trust this guy</h2>
-	    <h3>Do You?</h3>
-	    <p>He is driving the components specifications. This photograph is all you need to trust him. <a href="http://twitter.com/dglazkov">@dglazkov</a> for President!</p>
+	    <h2>@dglazkov for President!</h2>	    
+	    <p>He is driving the components specifications. This photograph is sufficient proof of his qualifications to be the President.</p>
 	</div>
     </section>
 </body>

@@ -5,9 +5,15 @@
     <link rel="components" href="regions-component.html">
     <script src="../components-polyfill.js"></script>
     <style>
+        body {
+            margin: 0;
+            background: #ccc;
+            padding: 4em 0 0 0;
+        }
         .content p {
             -webkit-flow-into: poemflow;
             white-space: pre-line;
+            text-shadow: 1px 1px 1px #fff;
         }
 
         .content p::first-letter {
@@ -16,15 +22,18 @@
             vertical-align: -0.05em;
         }
 
+        .content p:nth-child(odd) {
+            text-align: right;
+        }
+
         .layout article {
             overflow: hidden;
-            max-width: 60em;
+            max-width: 40em;
             margin: 0 auto;            
-	}
-
+        }
         .layout article img {
             float: left;
-            height: 15em;
+            height: 10em;
         }
         .layout article div {
             -webkit-flow-from: poemflow;
@@ -33,14 +42,10 @@
 
         .layout article:nth-child(odd) img {
             float: right;
-        }
-
-        .layout article:nth-child(odd) div {
-            text-align: right;
-        }
+        }        
 
         .layout article:last-child div {
-            min-height: 50em;
+            min-height: 10em;
         }
     </style>        
 </head>
